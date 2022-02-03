@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /**
+     * Algorithm
+     * 1. create a function to separate the elements of array accepts one arguments
+     * 2. handle edgecases (return enter proper value)
+     * 3. traverse the array with for loop
+     * 4. check if element is less than or equal to 0
+     * 4.1. if true unshift the element to empty array
+     * 4.2. if false push the element to empty array
+     */
+
+    const arr = [0, 1, 0, 1, 0, 0, 1, 1, 1, 0];
+
+    const newArr = [];
+
+    function separateArray(arr) {
+      if (!arr || !Array.isArray(arr)) {
+        return "Enter Proper Value";
+      }
+      for (let elements of arr) {
+        if (elements <= 0) {
+          newArr.unshift(elements);
+        } else {
+          newArr.push(elements);
+        }
+      }
+      return newArr;
+    }
+
+    console.log(separateArray(arr));
+  </script>
+</html>
