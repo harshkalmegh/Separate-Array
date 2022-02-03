@@ -20,8 +20,8 @@
 
     const arr = [0, 1, 0, 1, 0, 0, 1, 1, 1, 0];
 
-    const newArr = [];
-
+    // Version 1
+    /* const newArr = [];
     function separateArray(arr) {
       if (!arr || !Array.isArray(arr)) {
         return "Enter Proper Value";
@@ -35,7 +35,26 @@
       }
       return newArr;
     }
+    console.log(separateArray(arr)); */
 
+    // Version 2
+
+    function separateArray(arr) {
+      if (!arr || !Array.isArray(arr)) {
+        return "Enter Proper Value";
+      }
+      // debugger;
+      let newArr = [];
+      for (let elements of arr) {
+        console.log(elements);
+        if (elements === 0) {
+          newArr = [0, ...newArr];
+        } else {
+          newArr = [...newArr, 1];
+        }
+      }
+      return newArr;
+    }
     console.log(separateArray(arr));
   </script>
 </html>
